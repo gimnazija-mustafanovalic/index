@@ -12,6 +12,7 @@ nav {
   width: 100%;
   padding: 1em 0;
   position: fixed;
+  top: 0;
   background-color: #fff;
   z-index: 999;
   -webkit-box-shadow: 0px 3px 19px -2px rgba(0,0,0,0.75);
@@ -40,15 +41,24 @@ nav img {
   margin-left: 30px;
 }
 
-#facebookIconAnchor {
+nav #facebookIconAnchor {
   color: #4267B2;
   text-decoration: none;
 }
 
-#facebookIcon {
+nav #facebookIcon {
   position: absolute;
   right: 5%;
   margin-top: 8px;
+}
+
+nav #menuIcon {
+ font-size: 22px;
+ position: absolute;
+ right: 5%;
+ top: 30%;
+ display: none;
+ cursor: pointer;
 }
 
 #header {
@@ -122,6 +132,7 @@ nav img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 5em;
 }
 
 #contact #contactGrid {
@@ -136,4 +147,97 @@ nav img {
 hr {
   width: 80%;
   background-color: #333;
+}
+
+footer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  -webkit-box-shadow: 0px 3px 19px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 19px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 19px -2px rgba(0,0,0,0.75);
+}
+
+footer img {
+  padding: 1em;
+  width: 60px;
+  height: 50px;
+}
+
+#menu {
+  z-index: 99;
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  width: 0vw;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#menu ul li {
+  text-align: center;
+  background-color: rgba(255,255,255, 0.5);
+  margin-bottom: 3px;
+  padding: 0.5em 0;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menuOpen {
+  transition: 0.2s;
+  width: 50vw !important;
+}
+
+@media(max-width: 1020px) {
+  nav ul {
+    display: none;
+  }
+  nav #facebookIcon {
+    display: none;
+  }
+  nav #menuIcon {
+    display: block;
+   }
+  #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #header .title {
+    position: static;
+    margin: 0 10px;
+  }
+  #header #arrow {
+    position: static;
+    margin-top: 100px;
+  }
+  #news .news-post {
+    flex-direction: column;
+    margin-bottom: 0.5em;
+  }
+  #contact #contactGrid {
+    grid-template-columns: 1fr;
+  }
+  footer img {
+    padding: 0.5em;
+    width: 60px;
+    height: 50px;
+  }
 }
